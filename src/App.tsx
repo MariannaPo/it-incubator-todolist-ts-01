@@ -5,11 +5,17 @@ import TodoList, {TaskType} from "./TodoList";
 export type FilterValuesType = "all" | "active" | "completed"
 
 function App() {
-    const todoListTitle = "What to learn"
+    const task1 = "What to learn"
     const [tasks, setTasks] = React.useState<Array<TaskType>>([
         {id: 1, title: "HTML", isDone: true},
         {id: 2, title: "CSS", isDone: true},
         {id: 3, title: "JS/TS", isDone: false},
+    ])
+    const tasks2 = 'Songs'
+        const [taskgs, setTasgks] = React.useState<Array<TaskType>>([
+        { id: 1, title: "Hello world", isDone: true },
+        { id: 2, title: "I am Happy", isDone: false },
+        { id: 3, title: "Yo", isDone: false }
     ])
 
     const [filter, setFilter] = React.useState<FilterValuesType>("all")
@@ -38,13 +44,15 @@ function App() {
     return (
         <div className="App">
             <TodoList
-                title={todoListTitle}
+                title={'What to learn?'}
                 tasks={tasksForRender}
                 removeTask={removeTask}
                 changeFilter={changeFilter}
             />
-            {/*<TodoList title={"What to buy?"}/>*/}
-            {/*<TodoList title={"What to read?"}/>*/}
+            <TodoList title={'Songs'}
+            tasks={tasksForRender}
+            removeTask={removeTask}
+            changeFilter={changeFilter}/>
         </div>
     );
 }
